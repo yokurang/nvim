@@ -1,5 +1,5 @@
 require("lazy").setup({
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  { "catppuccin/nvim",                  name = "catppuccin", priority = 1000 },
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.4",
@@ -7,6 +7,16 @@ require("lazy").setup({
   },
   { "dracula/vim" },
   { "nvim-tree/nvim-tree.lua" },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    }
+  },
   { "nvim-tree/nvim-web-devicons" },
   { "ellisonleao/gruvbox.nvim" },
   { "tpope/vim-commentary" },
@@ -124,14 +134,15 @@ require("lazy").setup({
   -- tCPA
   { "whonore/Coqtail" },
 
-  -- bufferline  
+  -- bufferline
   { 'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons' },
 
   -- toggle term
   { 'akinsho/toggleterm.nvim', version = "*", config = true },
 
   -- vim-slime
-  { 'jpalardy/vim-slime',
+  {
+    'jpalardy/vim-slime',
     version = "*",
   },
 
