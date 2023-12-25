@@ -1,5 +1,5 @@
 require("lazy").setup({
-  { "catppuccin/nvim",                  name = "catppuccin", priority = 1000 },
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.4",
@@ -14,7 +14,7 @@ require("lazy").setup({
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
-      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+      "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     }
   },
   { "nvim-tree/nvim-web-devicons" },
@@ -146,4 +146,67 @@ require("lazy").setup({
     version = "*",
   },
 
+  -- comments
+  {
+    'numToStr/Comment.nvim',
+    opts = {
+      padding = true,
+      ---Whether the cursor should stay at its position
+      sticky = true,
+      ---Lines to be ignored while (un)comment
+      ignore = nil,
+      ---LHS of toggle mappings in NORMAL mode
+    },
+    lazy = false,
+  },
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {
+      position = "bottom", -- position of the list can be: bottom, top, left, right
+      height = 10, -- height of the trouble list when position is top or bottom
+      width = 50, -- width of the list when position is left or right
+      icons = true, -- use devicons for filenames
+      group = true, -- group results by file
+      padding = true, -- add an extra new line on top of the list
+      cycle_results = true, -- cycle item list when reaching beginning or end of list
+      multiline = true, -- render multi-line messages
+      indent_lines = true, -- add an indent guide below the fold icons
+    },
+  },
+  {
+    "nvimtools/none-ls.nvim",
+    requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+  },
+  {
+    "mfussenegger/nvim-lint",
+    requires = { "neovim/nvim-lspconfig" },
+    lazy = true,
+    dependencies = {
+      "rcarriga/nvim-dap-ui",
+      "williamboman/mason-lspconfig.nvim",
+    },
+    -- event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
+  },
+  {
+    "tjdevries/ocaml.nvim",
+    ft = "ocaml",
+    requires = { "nvim-lua/plenary.nvim", },
+  },
+  {
+    "nvim-neorg/neorg",
+  },
+  { 
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    init = function()
+     vim.o.timeout = true
+     vim.o.timeoutlen = 500
+    end,
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+  },
 })
