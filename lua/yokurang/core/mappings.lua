@@ -2,9 +2,14 @@ local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 local keymap = vim.api.nvim_set_keymap
 
+-- global variables
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.g.dap_virtual_text = true
+vim.g.slime_target = "tmux"
 
 -- ******** -- 
 

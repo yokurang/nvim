@@ -38,6 +38,8 @@ local options = {
   spell = true,
   background = "dark",
   backspace = "indent,eol,start",
+  list = true,
+  spelllang = "en_us",
 }
 
 vim.opt.shortmess:append "c"
