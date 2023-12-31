@@ -10,9 +10,7 @@ return {
   vim.g.mkdp_open_to_the_world = 1
 
   local keymap = vim.keymap
-  keymap.set({
-    { "n", "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>" },
-    { "n", "<leader>ms", "<cmd>MarkdownPreviewStop<cr>" },
-  })
+  keymap.set('n', '<leader>mp', '<cmd>MarkdownPreviewToggle<cr>')
+  keymap.set('n', '<leader>ms', '<cmd>MarkdownPreviewStop<cr>')
   end,
 }
