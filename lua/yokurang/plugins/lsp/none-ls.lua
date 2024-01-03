@@ -5,9 +5,6 @@ return {
 	dependencies = {
 		"jay-babu/mason-null-ls.nvim",
 	},
-	opts = {
-		auto_install = true,
-	},
 	config = function()
 		local mason_null_ls = require("mason-null-ls")
 
@@ -23,7 +20,6 @@ return {
 				"pylint", -- python linter
 				"eslint_d", -- js linter
 			},
-			automatic_installation = true, -- not the same as ensure_installed
 		})
 
 		-- for conciseness
@@ -47,8 +43,6 @@ return {
 				formatting.stylua, -- lua formatter
 				formatting.isort,
 				formatting.black,
-				formatting.ocamlformat,
-				formatting.rustfmt,
 				diagnostics.pylint,
 				diagnostics.eslint_d.with({ -- js/ts linter
 					condition = function(utils)

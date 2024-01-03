@@ -4,10 +4,6 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
-	opt = {
-		auto_install = true,
-	},
-	lazy = true,
 	config = function()
 		-- import mason
 		local mason = require("mason")
@@ -43,7 +39,6 @@ return {
 				"pyright",
 				"rust_analyzer",
 				"ocamllsp",
-				"clangd",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
@@ -57,8 +52,6 @@ return {
 				"black", -- python formatter
 				"pylint", -- python linter
 				"eslint_d", -- js linter
-				"ocamlformat", -- ocaml formatter
-				"rustfmt", -- rust formatter
 			},
 		})
 	end,
