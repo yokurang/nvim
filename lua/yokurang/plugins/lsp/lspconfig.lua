@@ -157,5 +157,23 @@ return {
 				},
 			},
 		})
+
+		-- configure rust server
+		-- lspconfig["rust_analyzer"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- })
+
+		-- configure ocaml server
+		lspconfig["ocamllsp"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- configure c++ server
+		lspconfig["clangd"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
 	end,
 }
